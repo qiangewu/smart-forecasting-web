@@ -69,7 +69,7 @@ async function login() {
         });
         localStorage.setItem('roles', JSON.stringify(result.data.roles));
         const menus = result.data.menus.filter(menu => menu.type === 'MENU')
-          .sort((a, b) => a.sort.localeCompare(b.sort));
+          .sort((a, b) =>{return (a.sort).localeCompare(b.sort)});
         localStorage.setItem('MENUS', JSON.stringify(menus));
         const BUTTON = result.data.menus.filter(menu => menu.type === 'BUTTON')
           .map(x => x.path);
@@ -101,6 +101,7 @@ export default {
           token: result.data.token,
         });
         localStorage.setItem('roles', JSON.stringify(result.data.roles));
+        console.log(result.data.menus.filter(menu => menu.type === 'MENU'));
         const menus = result.data.menus.filter(menu => menu.type === 'MENU')
           .sort((a, b) => a.sort.localeCompare(b.sort));
         localStorage.setItem('MENUS', JSON.stringify(menus));

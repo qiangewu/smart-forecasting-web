@@ -85,6 +85,18 @@ const sysRouters = [
     component: () => import('@/views/sys/codingRule/CodingRuleList.vue'),
   },
   {
+    path: '/news',
+    name: 'News',
+    meta: { requiresAuth: true, title: '新闻管理' },
+    component: () => import('@/views/sys/news/NewsList.vue'),
+  },
+  // {
+  //   path: '/document',
+  //   name: 'Document',
+  //   meta: { requiresAuth: true, title: '文档管理' },
+  //   component: () => import('@/views/sys/document/DocumentList.vue'),
+  // },
+  {
     name: '404',
     path: '/404',
     component: () => import('@/layout/NotFoundPage.vue'),

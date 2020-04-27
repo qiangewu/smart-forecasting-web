@@ -77,14 +77,15 @@
         :on-submit-handler="closeForm">
       </dictionary-edit>
     </el-dialog>
-    <el-drawer
+    <el-dialog
       :visible.sync="dataForm.visible"
       @close="getDictionaryList"
       :with-header="false">
       <sys-dict-data-list
         v-if="dataForm.visible"
-        :sys-dict-id="dataForm.data.id"/>
-    </el-drawer>
+        :sys-dict-id="dataForm.data.id">
+      </sys-dict-data-list>
+    </el-dialog>
   </div>
 </template>
 
